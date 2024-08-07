@@ -1,0 +1,23 @@
+{
+    "builds": [
+      {
+        "src": "Money-Manager-React-master/package.json",
+        "use": "@vercel/next"
+      },
+      {
+        "src": "Back-end/package.json",
+        "use": "@vercel/node"
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "Back-end/src/$1"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "Money-Manager-React-master/$1"
+      }
+    ]
+  }
+  
